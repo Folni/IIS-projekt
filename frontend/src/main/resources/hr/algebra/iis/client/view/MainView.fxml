@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hr.algebra.iis.client.controller.MainController"
+            prefWidth="1000" prefHeight="700"
+            styleClass="root-pane">
+
+    <!-- Gornja traka s info o korisniku -->
+    <top>
+        <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="10">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Label text="IIS Projekt — WooCommerce Products" styleClass="top-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="userInfoLabel" styleClass="user-info"/>
+            <Button text="Odjava" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+
+    <!-- Tabovi za svaki korak -->
+    <center>
+        <TabPane fx:id="tabPane" styleClass="main-tabs">
+
+            <!-- Tab 1: Proizvodi (REST API) -->
+            <Tab text="Proizvodi (REST)" closable="false">
+                <BorderPane>
+                    <top>
+                        <HBox spacing="10" styleClass="toolbar">
+                            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                            <Button text="Osvježi" onAction="#handleRefresh" styleClass="action-button"/>
+                            <Button fx:id="addButton" text="Dodaj proizvod"
+                                    onAction="#handleAddProduct" styleClass="primary-button"/>
+                            <Button fx:id="editButton" text="Uredi"
+                                    onAction="#handleEditProduct" styleClass="action-button"
+                                    disable="true"/>
+                            <Button fx:id="deleteButton" text="Obriši"
+                                    onAction="#handleDeleteProduct" styleClass="danger-button"
+                                    disable="true"/>
+                            <Label fx:id="statusLabel" styleClass="status-label"/>
+                        </HBox>
+                    </top>
+                    <center>
+                        <TableView fx:id="productsTable" styleClass="data-table">
+                            <columns>
+                                <TableColumn fx:id="idCol" text="ID" prefWidth="60"/>
+                                <TableColumn fx:id="nameCol" text="Naziv" prefWidth="200"/>
+                                <TableColumn fx:id="priceCol" text="Cijena" prefWidth="100"/>
+                                <TableColumn fx:id="typeCol" text="Vrsta" prefWidth="100"/>
+                                <TableColumn fx:id="statusCol" text="Status" prefWidth="100"/>
+                                <TableColumn fx:id="stockCol" text="Zaliha" prefWidth="80"/>
+                                <TableColumn fx:id="skuCol" text="SKU" prefWidth="120"/>
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+            </Tab>
+
+            <!-- Tab 2: XML Validacija (Korak 1 i 3) -->
+            <Tab text="XML/JSON Validacija" closable="false">
+                <BorderPane>
+                    <center>
+                        <VBox spacing="15">
+                            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+                            <Label text="KORAK 1: XML i JSON Validacija" styleClass="section-title"/>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Button text="Validiraj XML datoteku (Korak 3)"
+                                        onAction="#handleValidateXml" styleClass="primary-button"/>
+                                <Button text="Generiraj XML za SOAP"
+                                        onAction="#handleGenerateXml" styleClass="action-button"/>
+                            </HBox>
+
+                            <Label text="XML za validaciju:" styleClass="field-label"/>
+                            <TextArea fx:id="xmlInput" prefRowCount="6"
+                                      promptText="Unesite XML za validaciju..."
+                                      styleClass="code-area"/>
+
+                            <Label text="JSON za validaciju:" styleClass="field-label"/>
+                            <TextArea fx:id="jsonInput" prefRowCount="4"
+                                      promptText="Unesite JSON za validaciju..."
+                                      styleClass="code-area"/>
+
+                            <Button text="Validiraj XML i JSON"
+                                    onAction="#handleValidateBoth" styleClass="primary-button"/>
+
+                            <Label text="Rezultat validacije:" styleClass="field-label"/>
+                            <TextArea fx:id="validationResult" prefRowCount="5"
+                                      editable="false" styleClass="result-area"/>
+                        </VBox>
+                    </center>
+                </BorderPane>
+            </Tab>
+
+            <!-- Tab 3: SOAP Pretraga (Korak 2) -->
+            <Tab text="SOAP Pretraga" closable="false">
+                <BorderPane>
+                    <center>
+                        <VBox spacing="15">
+                            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+                            <Label text="KORAK 2: SOAP Pretraga s XPath-om" styleClass="section-title"/>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Pojam pretrage:" styleClass="field-label"/>
+                                <TextField fx:id="soapSearchField"
+                                           promptText="Unesite pojam za pretragu..."
+                                           prefWidth="300" styleClass="text-field"/>
+                                <Button text="Pretraži" onAction="#handleSoapSearch"
+                                        styleClass="primary-button"/>
+                            </HBox>
+
+                            <Label text="SOAP Odgovor:" styleClass="field-label"/>
+                            <TextArea fx:id="soapResult" prefRowCount="15"
+                                      editable="false" styleClass="result-area"/>
+                        </VBox>
+                    </center>
+                </BorderPane>
+            </Tab>
+
+            <!-- Tab 4: gRPC Temperatura (Korak 4) -->
+            <Tab text="gRPC Temperatura" closable="false">
+                <BorderPane>
+                    <center>
+                        <VBox spacing="15">
+                            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+                            <Label text="KORAK 4: DHMZ Temperatura (gRPC)" styleClass="section-title"/>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Naziv grada:" styleClass="field-label"/>
+                                <TextField fx:id="cityField"
+                                           promptText="npr. Zagreb, Split, Rijeka..."
+                                           prefWidth="300" styleClass="text-field"/>
+                                <Button text="Dohvati temperaturu"
+                                        onAction="#handleGetTemperature"
+                                        styleClass="primary-button"/>
+                                <Button text="Streaming (svi gradovi)"
+                                        onAction="#handleGetTemperatureStream"
+                                        styleClass="action-button"/>
+                            </HBox>
+
+                            <TableView fx:id="weatherTable" styleClass="data-table" prefHeight="300">
+                                <columns>
+                                    <TableColumn fx:id="cityWeatherCol" text="Grad" prefWidth="200"/>
+                                    <TableColumn fx:id="tempCol" text="Temperatura (°C)" prefWidth="150"/>
+                                    <TableColumn fx:id="humidityCol" text="Vlaga" prefWidth="100"/>
+                                    <TableColumn fx:id="pressureCol" text="Tlak" prefWidth="120"/>
+                                    <TableColumn fx:id="windCol" text="Vjetar" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </center>
+                </BorderPane>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+    <!-- Statusna traka -->
+    <bottom>
+        <HBox styleClass="status-bar">
+            <padding><Insets top="5" right="20" bottom="5" left="20"/></padding>
+            <Label fx:id="bottomStatus" text="Spreman" styleClass="bottom-status"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

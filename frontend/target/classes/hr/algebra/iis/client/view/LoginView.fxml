@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hr.algebra.iis.client.controller.LoginController"
+            prefWidth="450" prefHeight="350"
+            styleClass="root-pane">
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding><Insets top="40" right="60" bottom="40" left="60"/></padding>
+
+            <Label text="IIS Projekt" styleClass="title-label"/>
+            <Label text="WooCommerce Products API" styleClass="subtitle-label"/>
+
+            <VBox spacing="8">
+                <Label text="Korisničko ime" styleClass="field-label"/>
+                <TextField fx:id="usernameField" promptText="Unesite korisničko ime"
+                           styleClass="text-field"/>
+            </VBox>
+
+            <VBox spacing="8">
+                <Label text="Lozinka" styleClass="field-label"/>
+                <PasswordField fx:id="passwordField" promptText="Unesite lozinku"
+                               styleClass="text-field"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" styleClass="error-label" text="" wrapText="true"/>
+
+            <Button fx:id="loginButton" text="Prijava"
+                    onAction="#handleLogin"
+                    styleClass="primary-button"
+                    maxWidth="Infinity"/>
+
+            <Label styleClass="hint-label"
+                   text="admin / admin123 (puni pristup)  |  viewer / viewer123 (samo čitanje)"/>
+        </VBox>
+    </center>
+</BorderPane>

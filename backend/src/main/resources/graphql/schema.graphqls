@@ -1,0 +1,120 @@
+# =============================================
+# GraphQL shema - WooCommerce Products
+# KORAK 5
+# =============================================
+
+type Query {
+    # Dohvati sve proizvode
+    products(page: Int, pageSize: Int): [Product!]!
+
+    # Dohvati proizvod po ID-u
+    product(id: ID!): Product
+
+    # Pretraži proizvode po imenu
+    searchProducts(name: String!): [Product!]!
+
+    # Dohvati kategorije
+    categories: [Category!]!
+}
+
+type Mutation {
+    # Kreiraj novi proizvod (treba FULL_ACCESS ulogu)
+    createProduct(input: ProductInput!): Product!
+
+    # Ažuriraj proizvod (treba FULL_ACCESS ulogu)
+    updateProduct(id: ID!, input: ProductInput!): Product!
+
+    # Obriši proizvod (treba FULL_ACCESS ulogu)
+    deleteProduct(id: ID!): Boolean!
+
+    # Autentifikacija
+    login(username: String!, password: String!): AuthPayload!
+    refreshToken(refreshToken: String!): AuthPayload!
+}
+
+type Product {
+    id: ID!
+    name: String!
+    slug: String
+    type: ProductType
+    status: ProductStatus
+    description: String
+    shortDescription: String
+    sku: String
+    price: String!
+    regularPrice: String
+    salePrice: String
+    stockQuantity: Int
+    stockStatus: StockStatus
+    weight: String
+    categories: [Category!]
+    images: [ProductImage!]
+    dateCreated: String
+    dateModified: String
+}
+
+type Category {
+    id: ID!
+    name: String!
+    slug: String
+}
+
+type ProductImage {
+    id: ID
+    src: String!
+    alt: String
+}
+
+type AuthPayload {
+    accessToken: String!
+    refreshToken: String!
+    tokenType: String!
+    expiresIn: Int!
+    user: UserInfo!
+}
+
+type UserInfo {
+    id: ID!
+    username: String!
+    role: UserRole!
+}
+
+input ProductInput {
+    name: String!
+    type: ProductType
+    status: ProductStatus
+    description: String
+    shortDescription: String
+    sku: String
+    price: String!
+    regularPrice: String
+    salePrice: String
+    stockQuantity: Int
+    stockStatus: StockStatus
+    weight: String
+    categoryIds: [Int!]
+}
+
+enum ProductType {
+    simple
+    variable
+    grouped
+    external
+}
+
+enum ProductStatus {
+    publish
+    draft
+    pending
+}
+
+enum StockStatus {
+    instock
+    outofstock
+    onbackorder
+}
+
+enum UserRole {
+    READ_ONLY
+    FULL_ACCESS
+}

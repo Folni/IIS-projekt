@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package hr.algebra.iis.grpc;
+
+option java_multiple_files = true;
+option java_package = "hr.algebra.iis.grpc";
+option java_outer_classname = "WeatherProto";
+
+// =============================================
+// KORAK 4: gRPC servis za DHMZ temperaturu
+// =============================================
+service WeatherService {
+    // Vraća temperaturu za zadani naziv grada
+    rpc GetTemperature (CityRequest) returns (TemperatureResponse);
+
+    // Server-streaming: vraća sve gradove koji sadrže traženi pojam
+    rpc GetTemperatureStream (CityRequest) returns (stream TemperatureResponse);
+}
+
+message CityRequest {
+    string city_name = 1;  // naziv ili dio naziva grada
+}
+
+message TemperatureResponse {
+    string city = 1;
+    double temperature = 2;
+    string humidity = 3;
+    string pressure = 4;
+    string wind = 5;
+    string timestamp = 6;
+    bool found = 7;
+    string error_message = 8;
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="hr.algebra.iis.client.controller.ProductDialogController"
+      spacing="12" prefWidth="450"
+      styleClass="root-pane">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <GridPane hgap="10" vgap="10">
+
+        <Label text="Naziv:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+               styleClass="field-label"/>
+        <TextField fx:id="nameField" promptText="Naziv proizvoda"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0"
+                   prefWidth="280" styleClass="text-field"/>
+
+        <Label text="Cijena:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+               styleClass="field-label"/>
+        <TextField fx:id="priceField" promptText="npr. 29.99"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"
+                   styleClass="text-field"/>
+
+        <Label text="SKU:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+               styleClass="field-label"/>
+        <TextField fx:id="skuField" promptText="npr. PROD-001"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"
+                   styleClass="text-field"/>
+
+        <Label text="Vrsta:" GridPane.columnIndex="0" GridPane.rowIndex="3"
+               styleClass="field-label"/>
+        <ComboBox fx:id="typeCombo" prefWidth="280"
+                  GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="4"
+               styleClass="field-label"/>
+        <ComboBox fx:id="statusCombo" prefWidth="280"
+                  GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="Zaliha:" GridPane.columnIndex="0" GridPane.rowIndex="5"
+               styleClass="field-label"/>
+        <TextField fx:id="stockField" promptText="Broj komada"
+                   GridPane.columnIndex="1" GridPane.rowIndex="5"
+                   styleClass="text-field"/>
+
+        <Label text="Status zalihe:" GridPane.columnIndex="0" GridPane.rowIndex="6"
+               styleClass="field-label"/>
+        <ComboBox fx:id="stockStatusCombo" prefWidth="280"
+                  GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+        <Label text="Opis:" GridPane.columnIndex="0" GridPane.rowIndex="7"
+               styleClass="field-label"/>
+        <TextArea fx:id="descriptionField" promptText="Opis proizvoda"
+                  prefRowCount="3" prefWidth="280"
+                  GridPane.columnIndex="1" GridPane.rowIndex="7"
+                  styleClass="text-field"/>
+
+    </GridPane>
+
+    <Label fx:id="errorLabel" styleClass="error-label" text="" wrapText="true"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="saveButton" text="Spremi"
+                onAction="#handleSave" styleClass="primary-button"/>
+        <Button text="Odustani"
+                onAction="#handleCancel" styleClass="action-button"/>
+    </HBox>
+
+</VBox>

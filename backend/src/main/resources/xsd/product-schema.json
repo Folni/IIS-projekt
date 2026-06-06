@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://algebra.hr/iis/product-schema.json",
+  "title": "WooCommerce Product",
+  "description": "Shema za validaciju WooCommerce proizvoda",
+  "type": "object",
+  "required": ["name", "price"],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Jedinstveni identifikator proizvoda"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Naziv proizvoda"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL slug proizvoda"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["simple", "variable", "grouped", "external"],
+      "description": "Vrsta proizvoda"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["publish", "draft", "pending", "private"],
+      "description": "Status proizvoda"
+    },
+    "description": {
+      "type": "string",
+      "description": "Opis proizvoda"
+    },
+    "short_description": {
+      "type": "string",
+      "description": "Kratki opis"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Jedinica za praćenje zaliha"
+    },
+    "price": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]{1,2})?$",
+      "description": "Trenutna cijena (npr. '29.99')"
+    },
+    "regular_price": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]{1,2})?$",
+      "description": "Redovna cijena"
+    },
+    "sale_price": {
+      "type": "string",
+      "pattern": "^([0-9]+(\\.[0-9]{1,2})?)?$",
+      "description": "Cijena na rasprodaji"
+    },
+    "stock_quantity": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Broj komada na zalihi"
+    },
+    "stock_status": {
+      "type": "string",
+      "enum": ["instock", "outofstock", "onbackorder"],
+      "description": "Status zalihe"
+    },
+    "weight": {
+      "type": "string",
+      "description": "Težina proizvoda"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "slug": { "type": "string" }
+        }
+      },
+      "description": "Lista kategorija"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["src"],
+        "properties": {
+          "id": { "type": "integer" },
+          "src": {
+            "type": "string",
+            "format": "uri"
+          },
+          "alt": { "type": "string" }
+        }
+      },
+      "description": "Slike proizvoda"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://algebra.hr/iis/product"
+           xmlns:tns="http://algebra.hr/iis/product"
+           elementFormDefault="qualified">
+
+    <!-- Korijen dokumenta: lista proizvoda -->
+    <xs:element name="products">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="product" type="tns:ProductType"
+                            minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Jedan proizvod -->
+    <xs:element name="product" type="tns:ProductType"/>
+
+    <xs:complexType name="ProductType">
+        <xs:sequence>
+            <xs:element name="id"             type="xs:integer"      minOccurs="0"/>
+            <xs:element name="name"           type="tns:NonEmptyString"/>
+            <xs:element name="slug"           type="xs:string"       minOccurs="0"/>
+            <xs:element name="type"           type="tns:ProductKind" minOccurs="0"/>
+            <xs:element name="status"         type="tns:StatusType"  minOccurs="0"/>
+            <xs:element name="description"    type="xs:string"       minOccurs="0"/>
+            <xs:element name="shortDescription" type="xs:string"     minOccurs="0"/>
+            <xs:element name="sku"            type="xs:string"       minOccurs="0"/>
+            <xs:element name="price"          type="tns:PriceType"/>
+            <xs:element name="regularPrice"   type="tns:PriceType"   minOccurs="0"/>
+            <xs:element name="salePrice"      type="tns:PriceType"   minOccurs="0"/>
+            <xs:element name="stockQuantity"  type="xs:integer"      minOccurs="0"/>
+            <xs:element name="stockStatus"    type="tns:StockStatus" minOccurs="0"/>
+            <xs:element name="weight"         type="xs:string"       minOccurs="0"/>
+            <xs:element name="categories"     type="tns:CategoriesType" minOccurs="0"/>
+            <xs:element name="images"         type="tns:ImagesType"  minOccurs="0"/>
+            <xs:element name="dateCreated"    type="xs:dateTime"     minOccurs="0"/>
+            <xs:element name="dateModified"   type="xs:dateTime"     minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Tipovi i enumeracije -->
+
+    <xs:simpleType name="NonEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="500"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PriceType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+(\.[0-9]{1,2})?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ProductKind">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="simple"/>
+            <xs:enumeration value="variable"/>
+            <xs:enumeration value="grouped"/>
+            <xs:enumeration value="external"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="StatusType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="publish"/>
+            <xs:enumeration value="draft"/>
+            <xs:enumeration value="pending"/>
+            <xs:enumeration value="private"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="StockStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="instock"/>
+            <xs:enumeration value="outofstock"/>
+            <xs:enumeration value="onbackorder"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="CategoriesType">
+        <xs:sequence>
+            <xs:element name="category" type="tns:CategoryType"
+                        minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CategoryType">
+        <xs:sequence>
+            <xs:element name="id"   type="xs:integer"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="slug" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ImagesType">
+        <xs:sequence>
+            <xs:element name="image" type="tns:ImageType"
+                        minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ImageType">
+        <xs:sequence>
+            <xs:element name="id"  type="xs:integer" minOccurs="0"/>
+            <xs:element name="src" type="xs:anyURI"/>
+            <xs:element name="alt" type="xs:string"  minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
