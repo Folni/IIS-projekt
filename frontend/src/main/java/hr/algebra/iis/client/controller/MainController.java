@@ -77,12 +77,13 @@ public class MainController {
 
         // Popuni XML i JSON input s primjerom
         xmlInput.setText("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<tns:product xmlns:tns=\"http://algebra.hr/iis/product\">\n" +
-            "  <tns:name>Primjer proizvoda</tns:name>\n" +
-            "  <tns:price>29.99</tns:price>\n" +
-            "  <tns:type>simple</tns:type>\n" +
-            "  <tns:status>publish</tns:status>\n" +
-            "</tns:product>");
+        "<tns:product xmlns:tns=\"http://algebra.hr/iis/product\">\n" +
+        "  <tns:name>Primjer proizvoda</tns:name>\n" +
+        "  <tns:type>simple</tns:type>\n" +
+        "  <tns:status>publish</tns:status>\n" +
+        "  <tns:sku>PROD-001</tns:sku>\n" +
+        "  <tns:price>29.99</tns:price>\n" +
+        "</tns:product>");
 
         jsonInput.setText("{\n  \"name\": \"Primjer proizvoda\",\n  \"price\": \"29.99\",\n  \"type\": \"simple\"\n}");
     }
@@ -277,13 +278,13 @@ public class MainController {
     private void handleGenerateXml() {
         new Thread(() -> {
             try {
-                ApiClient.generateXml();
-                Platform.runLater(() -> validationResult.setText("XML datoteka generirana uspješno."));
+                String result = ApiClient.generateXml();
+                Platform.runLater(() -> validationResult.setText(result));
             } catch (Exception e) {
                 Platform.runLater(() -> validationResult.setText("Greška: " + e.getMessage()));
             }
         }).start();
-    }
+}
 
     // =================== SOAP Pretraga ===================
 

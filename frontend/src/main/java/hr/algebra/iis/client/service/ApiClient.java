@@ -3,7 +3,6 @@ package hr.algebra.iis.client.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
-import okhttp3.HttpUrl;
 
 import java.io.IOException;
 import java.util.List;
@@ -148,7 +147,7 @@ public class ApiClient {
 
     // =================== XML generiranje ===================
 
-    public static void generateXml() throws IOException {
+    public static String generateXml() throws IOException {
         Request request = new Request.Builder()
                 .url(BASE_URL + "/api/products/generate-xml")
                 .header("Authorization", "Bearer " + accessToken)
@@ -157,6 +156,7 @@ public class ApiClient {
 
         try (Response response = httpClient.newCall(request).execute()) {
             checkResponse(response);
+            return response.body().string();
         }
     }
 
