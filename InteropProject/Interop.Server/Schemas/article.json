@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Article",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "summary": { "type": "string" },
+    "content": { "type": "string" },
+    "order": { "type": [ "integer", "null" ] }
+  },
+  "required": [ "title", "content" ]
+}

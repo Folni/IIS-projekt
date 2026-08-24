@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Interop.Client/Interop.Client.csproj" />
+  <Project Path="Interop.Common/Interop.Common.csproj" />
+  <Project Path="Interop.Server/Interop.Server.csproj" />
+</Solution>
