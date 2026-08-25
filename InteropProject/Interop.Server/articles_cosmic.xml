@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Articles>
+  <Article>
+    <Title>Što je Docker i zašto nam je potreban?</Title>
+    <Summary>Uvod u kontejnere, razlika između Docker kontejnera i virtualnih mašina te osnovne naredbe za pokretanje aplikacija.</Summary>
+    <Content>Docker omogućuje programerima da zapakiraju svoju aplikaciju sa svim potrebnim ovisnostima i bibliotekama u jedan jedinstveni kontejner. Time se rješava klasični problem "ali kod mene na računalu to radi".
+
+Za razliku od virtualnih mašina koje podižu cijeli operativni sustav, kontejneri dijele kernel domaćina, što ih čini iznimno brzima i laganima za resurse.
+
+**Tri najvažnije naredbe za početak:**
+
+-   `docker build -t naziv-slike .` – Izrada Docker slike iz Dockerfile-a.
+    
+-   `docker run -p 8080:8080 naziv-slike` – Pokretanje kontejnera na određenom portu.
+    
+-   `docker ps` – Prikaz svih trenutno pokrenutih kontejnera.</Content>
+    <Order></Order>
+  </Article>
+  <Article>
+    <Title>Najbolje prakse za dizajniranje RESTful API-ja</Title>
+    <Summary>Pregled ključnih pravila za kreiranje čistih, razumljivih i skalabilnih web servisa pomoću HTTP metoda i ispravnih putanja.</Summary>
+    <Content>Dobar dizajn API-ja ključan je za laku integraciju i održavanje sustava. Prilikom izrade RESTful servisa potrebno je držati se nekoliko zlatnih pravila.
+
+-   **Koristi imenice, a ne glagole za rute:** Umjesto `/getUsers` koristi `GET /users`. Umjesto `/createNewUser` koristi `POST /users`.
+    
+-   **Ispravni HTTP statusni kodovi:** Uvijek vrati točan status (npr. `200 OK` za uspjeh, `201 Created` za uspješno kreiranje, `400 Bad Request` za klijentsku pogrešku, `404 Not Found` ako resurs ne postoji).
+    
+-   **Verzioniranje:** Uključi verziju API-ja u samu putanju kako bi izbjegao probleme s kompatibilnošću u budućnosti (npr. `/api/v1/users`).</Content>
+    <Order></Order>
+  </Article>
+  <Article>
+    <Title>Kako riješiti Git merge konflikt</Title>
+    <Summary>Kratki vodič kroz korake potrebne za prepoznavanje, lociranje i uspješno rješavanje konflikata prilikom spajanja grana u Gitu.</Summary>
+    <Content>Git merge konflikti nastaju kada dvoje programera promijene istu liniju koda u istoj datoteci na različitim granama, ili kada jedan programer obriše datoteku koju drugi pokušava izmijeniti.
+
+**Koraci za rješavanje:**
+
+1.  Pokreni `git status` da vidiš koje su datoteke konfliktne.
+    
+2.  Otvori konfliktnu datoteku u VS Code-u.
+    
+3.  Odaberi koju promjenu želiš zadržati (_Accept Current Change_, _Accept Incoming Change_ ili _Accept Combination_).
+    
+4.  Spremi datoteku, pokreni `git add &lt;datoteka&gt;` i završi spajanje naredbom `git commit`.</Content>
+    <Order></Order>
+  </Article>
+</Articles>

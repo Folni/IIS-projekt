@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zYaUCUA/SXo=",
+  "dgSpecHash": "JydVItLhG9w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj",
+  "projectFilePath": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\filip\\.nuget\\packages\\chillicream.nitro.app\\31.0.3\\chillicream.nitro.app.31.0.3.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\google.protobuf\\3.31.1\\google.protobuf.3.31.1.nupkg.sha512",

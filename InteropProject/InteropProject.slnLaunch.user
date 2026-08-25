@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Interop.Server\\Interop.Server.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Interop.Client\\Interop.Client.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

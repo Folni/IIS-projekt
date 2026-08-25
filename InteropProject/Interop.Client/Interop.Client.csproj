@@ -1,15 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Interop.Common\Interop.Common.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.28.2" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.66.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.66.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Interop.Common\Interop.Common.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="..\Interop.Server\Protos\weather.proto" GrpcServices="Client" Link="Protos\weather.proto" />
+	</ItemGroup>
 
 </Project>

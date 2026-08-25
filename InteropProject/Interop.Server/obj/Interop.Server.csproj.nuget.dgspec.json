@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj": {}
+    "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj": {
+    "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj",
+        "projectUniqueName": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj",
         "projectName": "Interop.Common",
-        "projectPath": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj",
+        "projectPath": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj",
         "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Common\\obj\\",
+        "outputPath": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -345,14 +345,14 @@
         }
       }
     },
-    "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj": {
+    "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj",
+        "projectUniqueName": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj",
         "projectName": "Interop.Server",
-        "projectPath": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj",
+        "projectPath": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Interop.Server.csproj",
         "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\obj\\",
+        "outputPath": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -374,8 +374,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj": {
-                "projectPath": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj"
+              "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj": {
+                "projectPath": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Common\\Interop.Common.csproj"
               }
             }
           }
@@ -390,7 +390,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
@@ -459,7 +459,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
