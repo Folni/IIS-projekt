@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Interop.Server.Protos";
+
+package weather;
+
+service WeatherService {
+  rpc GetTemperature (WeatherRequest) returns (WeatherResponse);
+}
+
+message WeatherRequest {
+  string cityName = 1;
+}
+
+message WeatherResponse {
+  repeated CityTemperature cities = 1;
+}
+
+message CityTemperature {
+  string cityName = 1;
+  string temperature = 2;
+}

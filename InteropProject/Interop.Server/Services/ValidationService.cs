@@ -12,11 +12,10 @@ namespace Interop.Server.Services
 
         public ValidationService(IWebHostEnvironment env)
         {
-            _xsdPath = Path.Combine(env.ContentRootPath, "Schemas", "article.xsd");
-            _jsonSchemaPath = Path.Combine(env.ContentRootPath, "Schemas", "article.json");
+            _xsdPath = System.IO.Path.Combine(env.ContentRootPath, "Schemas", "article.xsd");
+            _jsonSchemaPath = System.IO.Path.Combine(env.ContentRootPath, "Schemas", "article.json");
         }
 
-        // 1. XML Validacija pomoću XSD sheme
         public List<string> ValidateXml(string xmlContent)
         {
             var errors = new List<string>();
@@ -48,7 +47,6 @@ namespace Interop.Server.Services
             return errors;
         }
 
-        // 2. JSON Validacija pomoću NJsonSchema
         public async Task<List<string>> ValidateJsonAsync(string jsonContent)
         {
             var errors = new List<string>();

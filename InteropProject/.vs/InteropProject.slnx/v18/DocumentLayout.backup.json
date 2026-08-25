@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\services\\soapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\services\\soapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\services\\validationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\services\\validationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\data\\articleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\data\\articleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\services\\cosmicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{992937AC-1705-4C4B-810D-E42994890927}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\services\\cosmicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|c:\\users\\filip\\desktop\\iis-projekt\\interopproject\\interop.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SoapService.cs",
+              "DocumentMoniker": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Services\\SoapService.cs",
+              "RelativeDocumentMoniker": "Interop.Server\\Services\\SoapService.cs",
+              "ToolTip": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Services\\SoapService.cs",
+              "RelativeToolTip": "Interop.Server\\Services\\SoapService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T11:05:49.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ValidationService.cs",
-              "DocumentMoniker": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Services\\ValidationService.cs",
-              "RelativeDocumentMoniker": "Interop.Server\\Services\\ValidationService.cs",
-              "ToolTip": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Services\\ValidationService.cs",
-              "RelativeToolTip": "Interop.Server\\Services\\ValidationService.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwEkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T09:48:52.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Interop.Server\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Interop.Server\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T09:41:37.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ArticleEntity.cs",
-              "DocumentMoniker": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Data\\ArticleEntity.cs",
-              "RelativeDocumentMoniker": "Interop.Server\\Data\\ArticleEntity.cs",
-              "ToolTip": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Data\\ArticleEntity.cs",
-              "RelativeToolTip": "Interop.Server\\Data\\ArticleEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T09:40:48.315Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "Interop.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\appsettings.json",
+              "RelativeToolTip": "Interop.Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-25T10:54:35.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ArticlesController.cs",
-              "DocumentMoniker": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Controllers\\ArticlesController.cs",
-              "RelativeDocumentMoniker": "Interop.Server\\Controllers\\ArticlesController.cs",
-              "ToolTip": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Controllers\\ArticlesController.cs",
-              "RelativeToolTip": "Interop.Server\\Controllers\\ArticlesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T09:17:43.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Program.cs",
               "RelativeDocumentMoniker": "Interop.Server\\Program.cs",
               "ToolTip": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Program.cs",
               "RelativeToolTip": "Interop.Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-24T09:16:22.487Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CosmicService.cs",
-              "DocumentMoniker": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Services\\CosmicService.cs",
-              "RelativeDocumentMoniker": "Interop.Server\\Services\\CosmicService.cs",
-              "ToolTip": "C:\\Users\\filip\\Desktop\\IIS-projekt\\InteropProject\\Interop.Server\\Services\\CosmicService.cs",
-              "RelativeToolTip": "Interop.Server\\Services\\CosmicService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T09:15:11.083Z",
               "EditorCaption": ""
             }
           ]
