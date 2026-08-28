@@ -7,7 +7,7 @@ namespace Interop.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // Zahtijeva JWT Token
+    [Authorize] 
     public class CustomArticlesController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -17,14 +17,12 @@ namespace Interop.Server.Controllers
             _context = context;
         }
 
-        // GET: api/CustomArticles
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ArticleEntity>>> GetArticles()
         {
             return await _context.Articles.ToListAsync();
         }
 
-        // GET: api/CustomArticles/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ArticleEntity>> GetArticle(string id)
         {
@@ -33,7 +31,6 @@ namespace Interop.Server.Controllers
             return article;
         }
 
-        // POST: api/CustomArticles (Samo FullAccess uloga)
         [HttpPost]
         [Authorize(Roles = "FullAccess")]
         public async Task<ActionResult<ArticleEntity>> CreateArticle(ArticleEntity article)
@@ -44,7 +41,6 @@ namespace Interop.Server.Controllers
             return CreatedAtAction(nameof(GetArticle), new { id = article.Id }, article);
         }
 
-        // PUT: api/CustomArticles/5 (Samo FullAccess uloga)
         [HttpPut("{id}")]
         [Authorize(Roles = "FullAccess")]
         public async Task<IActionResult> UpdateArticle(string id, ArticleEntity article)
@@ -65,7 +61,6 @@ namespace Interop.Server.Controllers
             return NoContent();
         }
 
-        // DELETE: api/CustomArticles/5 (Samo FullAccess uloga)
         [HttpDelete("{id}")]
         [Authorize(Roles = "FullAccess")]
         public async Task<IActionResult> DeleteArticle(string id)

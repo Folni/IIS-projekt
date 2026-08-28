@@ -1,6 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Articles>
   <Article>
+    <Title>Što je Docker i zašto nam je potreban? test azurno2</Title>
+    <Summary>Docker omogućuje programerima da zapakiraju svoju aplikaciju sa svim potrebnim ovisnostima i bibliotekama u jedan jedinstveni kontejner. Time se rješava klasični problem "ali kod mene na računalu to radi".
+
+Za razliku od virtualnih mašina koje podižu cijeli operativni sustav, kontejneri dijele kernel domaćina, što ih čini iznimno brzima i laganima za resurse.
+
+**Tri najvažnije naredbe za početak:**
+
+-   `docker build -t naziv-slike .` – Izrada Docker slike iz Dockerfile-a.
+    
+-   `docker run -p 8080:8080 naziv-slike` – Pokretanje kontejnera na određenom portu.
+    
+-   `docker ps` – Prikaz svih trenutno pokrenutih kontejnera.</Summary>
+    <Content>Docker omogućuje programerima da zapakiraju svoju aplikaciju sa svim potrebnim ovisnostima i bibliotekama u jedan jedinstveni kontejner. Time se rješava klasični problem "ali kod mene na računalu to radi".
+
+Za razliku od virtualnih mašina koje podižu cijeli operativni sustav, kontejneri dijele kernel domaćina, što ih čini iznimno brzima i laganima za resurse.
+
+**Tri najvažnije naredbe za početak:**
+
+-   `docker build -t naziv-slike .` – Izrada Docker slike iz Dockerfile-a.
+    
+-   `docker run -p 8080:8080 naziv-slike` – Pokretanje kontejnera na određenom portu.
+    
+-   `docker ps` – Prikaz svih trenutno pokrenutih kontejnera.</Content>
+    <Order></Order>
+  </Article>
+  <Article>
     <Title>Što je Docker i zašto nam je potreban?</Title>
     <Summary>Uvod u kontejnere, razlika između Docker kontejnera i virtualnih mašina te osnovne naredbe za pokretanje aplikacija.</Summary>
     <Content>Docker omogućuje programerima da zapakiraju svoju aplikaciju sa svim potrebnim ovisnostima i bibliotekama u jedan jedinstveni kontejner. Time se rješava klasični problem "ali kod mene na računalu to radi".

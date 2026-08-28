@@ -20,18 +20,15 @@ namespace Interop.Common
         [JsonPropertyName("slug")]
         public string Slug { get; set; } = string.Empty;
 
-        // Podrška za ravni JSON (iz Baze)
         [JsonPropertyName("content")]
         public string DirectContent { get; set; } = string.Empty;
 
         [JsonPropertyName("summary")]
         public string DirectSummary { get; set; } = string.Empty;
 
-        // Podrška za ugniježđeni JSON (s Cosmic-a)
         [JsonPropertyName("metadata")]
         public ArticleMetadata Metadata { get; set; } = new();
 
-        // Pametna svojstva za XAML Binding koji rade u oba slučaja
         [JsonIgnore]
         public string Content
         {

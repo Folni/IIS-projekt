@@ -22,7 +22,6 @@ namespace Interop.Server.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel model)
         {
-            // Testni korisnici: admin (FullAccess) i user (ReadOnly)
             string role = string.Empty;
             if (model.Username == "admin" && model.Password == "admin123")
                 role = "FullAccess";

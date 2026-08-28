@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Linq;
@@ -51,7 +52,6 @@ namespace Interop.Client
             BtnSendXml.IsEnabled = canWrite;
         }
 
-        // 1. JWT Prijava i upravljanje ulogama
         private async void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -81,6 +81,8 @@ namespace Interop.Client
                         PostaviDozvole(canWrite);
 
                         MessageBox.Show($"Uspješna prijava! Uloga: {_userRole}\nPravo pisanja: {(canWrite ? "DA" : "NE (ReadOnly)")}", "Prijava", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        await UcitajPodatkeOvisnoOIzvoruAsync();
                     }
                 }
                 else
@@ -94,41 +96,50 @@ namespace Interop.Client
             }
         }
 
-        // 2. Cosmic API dohvat
-        private async void BtnGetCosmic_Click(object sender, RoutedEventArgs e)
+        private async void Source_Checked(object sender, RoutedEventArgs e)
         {
+            await UcitajPodatkeOvisnoOIzvoruAsync();
+        }
+
+        private async void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            await UcitajPodatkeOvisnoOIzvoruAsync();
+        }
+
+        private async Task UcitajPodatkeOvisnoOIzvoruAsync()
+        {
+            if (_httpClient == null) return;
+
             try
             {
-                var articles = await _httpClient.GetFromJsonAsync<List<ArticleDto>>("/api/Articles/cosmic");
-                DgArticles.ItemsSource = articles;
+                List<ArticleDto>? articles = null;
+
+                if (RbCosmic != null && RbCosmic.IsChecked == true)
+                {
+                    articles = await _httpClient.GetFromJsonAsync<List<ArticleDto>>("/api/Articles/cosmic");
+                }
+                else
+                {
+                    articles = await _httpClient.GetFromJsonAsync<List<ArticleDto>>("/api/CustomArticles");
+                }
+
+                if (DgArticles != null) DgArticles.ItemsSource = articles;
+                if (DgCrud != null) DgCrud.ItemsSource = articles;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Greška pri dohvatu s Cosmic-a: {ex.Message}");
+                MessageBox.Show($"Greška pri dohvatu podataka: {ex.Message}");
             }
         }
 
-        // 3. Baza podataka dohvat preko CustomArticles
-        private async void BtnGetDb_Click(object sender, RoutedEventArgs e)
+        private void DgMainArticles_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            await UcitajIzBazeAsync();
-        }
-
-        private async System.Threading.Tasks.Task UcitajIzBazeAsync()
-        {
-            try
+            if (DgArticles.SelectedItem is ArticleDto selected && DgCrud != null)
             {
-                var articles = await _httpClient.GetFromJsonAsync<List<ArticleDto>>("/api/CustomArticles");
-                DgArticles.ItemsSource = articles;
-                DgCrud.ItemsSource = articles;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Greška pri dohvatu iz baze: {ex.Message}");
+                DgCrud.SelectedItem = selected;
             }
         }
 
-        // 4. CRUD: Selekcija iz tablice
         private void DgCrud_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DgCrud.SelectedItem is ArticleDto selected)
@@ -139,7 +150,6 @@ namespace Interop.Client
             }
         }
 
-        // CRUD: Create
         private async void BtnCrudCreate_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -152,11 +162,16 @@ namespace Interop.Client
                     Summary = TxtCrudContent.Text
                 };
 
-                var response = await _httpClient.PostAsJsonAsync("/api/CustomArticles", newArticle);
+                string endpoint = (RbCosmic != null && RbCosmic.IsChecked == true)
+                    ? "/api/Articles/cosmic"
+                    : "/api/CustomArticles";
+
+                var response = await _httpClient.PostAsJsonAsync(endpoint, newArticle);
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Članak uspješno dodan u bazu!");
-                    await UcitajIzBazeAsync();
+                    string target = (RbCosmic != null && RbCosmic.IsChecked == true) ? "Cosmic CMS" : "Bazu";
+                    MessageBox.Show($"Članak uspješno dodan na {target}!");
+                    await UcitajPodatkeOvisnoOIzvoruAsync();
                 }
                 else
                 {
@@ -169,7 +184,6 @@ namespace Interop.Client
             }
         }
 
-        // CRUD: Update
         private async void BtnCrudUpdate_Click(object sender, RoutedEventArgs e)
         {
             if (DgCrud.SelectedItem is not ArticleDto selected)
@@ -185,11 +199,15 @@ namespace Interop.Client
                 selected.Content = TxtCrudContent.Text;
                 selected.Summary = TxtCrudContent.Text;
 
-                var response = await _httpClient.PutAsJsonAsync($"/api/CustomArticles/{selected.Id}", selected);
+                string endpoint = (RbCosmic != null && RbCosmic.IsChecked == true)
+                    ? $"/api/Articles/cosmic/{selected.Id}"
+                    : $"/api/CustomArticles/{selected.Id}";
+
+                var response = await _httpClient.PutAsJsonAsync(endpoint, selected);
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Članak uspješno ažuriran!");
-                    await UcitajIzBazeAsync();
+                    await UcitajPodatkeOvisnoOIzvoruAsync();
                 }
                 else
                 {
@@ -202,7 +220,6 @@ namespace Interop.Client
             }
         }
 
-        // CRUD: Delete
         private async void BtnCrudDelete_Click(object sender, RoutedEventArgs e)
         {
             if (DgCrud.SelectedItem is not ArticleDto selected)
@@ -213,11 +230,15 @@ namespace Interop.Client
 
             try
             {
-                var response = await _httpClient.DeleteAsync($"/api/CustomArticles/{selected.Id}");
+                string endpoint = (RbCosmic != null && RbCosmic.IsChecked == true)
+                    ? $"/api/Articles/cosmic/{selected.Id}"
+                    : $"/api/CustomArticles/{selected.Id}";
+
+                var response = await _httpClient.DeleteAsync(endpoint);
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Članak obrisan!");
-                    await UcitajIzBazeAsync();
+                    await UcitajPodatkeOvisnoOIzvoruAsync();
                 }
                 else
                 {
@@ -230,7 +251,6 @@ namespace Interop.Client
             }
         }
 
-        // 5. Slanje JSON-a
         private async void BtnSendJson_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -240,7 +260,7 @@ namespace Interop.Client
                 var responseText = await response.Content.ReadAsStringAsync();
 
                 MessageBox.Show(responseText, response.IsSuccessStatusCode ? "Uspjeh" : "Validacijska Greška");
-                if (response.IsSuccessStatusCode) await UcitajIzBazeAsync();
+                if (response.IsSuccessStatusCode) await UcitajPodatkeOvisnoOIzvoruAsync();
             }
             catch (Exception ex)
             {
@@ -248,7 +268,6 @@ namespace Interop.Client
             }
         }
 
-        // 6. Slanje XML-a
         private async void BtnSendXml_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -258,7 +277,7 @@ namespace Interop.Client
                 var responseText = await response.Content.ReadAsStringAsync();
 
                 MessageBox.Show(responseText, response.IsSuccessStatusCode ? "Uspjeh" : "Validacijska Greška");
-                if (response.IsSuccessStatusCode) await UcitajIzBazeAsync();
+                if (response.IsSuccessStatusCode) await UcitajPodatkeOvisnoOIzvoruAsync();
             }
             catch (Exception ex)
             {
@@ -266,7 +285,6 @@ namespace Interop.Client
             }
         }
 
-        // 7. SOAP Pretraga (XPath / LINQ to XML)
         private async void BtnSoapSearch_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -293,25 +311,57 @@ namespace Interop.Client
                 XDocument xDoc = XDocument.Parse(xmlResult);
                 var articles = new List<ArticleDto>();
 
-                foreach (var el in xDoc.Descendants().Where(x => x.Name.LocalName == "ArticleDto"))
+                int counter = 1;
+                foreach (var el in xDoc.Descendants().Where(x => x.Name.LocalName.Equals("ArticleDto", StringComparison.OrdinalIgnoreCase) || x.Name.LocalName.Equals("Article", StringComparison.OrdinalIgnoreCase) || x.Name.LocalName.Equals("ArticleEntity", StringComparison.OrdinalIgnoreCase)))
                 {
-                    var meta = el.Elements().FirstOrDefault(x => x.Name.LocalName == "Metadata");
+                    var meta = el.Elements().FirstOrDefault(x => x.Name.LocalName.Equals("Metadata", StringComparison.OrdinalIgnoreCase) || x.Name.LocalName.Equals("metadata", StringComparison.OrdinalIgnoreCase));
+
+                    string GetVal(params string[] names)
+                    {
+                        foreach (var name in names)
+                        {
+                            var val = el.Elements().FirstOrDefault(x => x.Name.LocalName.Equals(name, StringComparison.OrdinalIgnoreCase))?.Value;
+                            if (!string.IsNullOrEmpty(val)) return val;
+
+                            if (meta != null)
+                            {
+                                val = meta.Elements().FirstOrDefault(x => x.Name.LocalName.Equals(name, StringComparison.OrdinalIgnoreCase))?.Value;
+                                if (!string.IsNullOrEmpty(val)) return val;
+                            }
+                        }
+                        return string.Empty;
+                    }
+
+                    string id = GetVal("Id", "id", "_id", "ArticleId", "article_id", "ID");
+                    if (string.IsNullOrEmpty(id))
+                    {
+                        id = counter.ToString(); 
+                    }
+
+                    string title = GetVal("Title", "title");
+                    string slug = GetVal("Slug", "slug");
+                    if (string.IsNullOrEmpty(slug) && !string.IsNullOrEmpty(title))
+                    {
+                        slug = title.ToLower().Replace(" ", "-");
+                    }
 
                     articles.Add(new ArticleDto
                     {
-                        Id = el.Elements().FirstOrDefault(x => x.Name.LocalName == "Id")?.Value ?? string.Empty,
-                        Title = el.Elements().FirstOrDefault(x => x.Name.LocalName == "Title")?.Value ?? string.Empty,
-                        Slug = el.Elements().FirstOrDefault(x => x.Name.LocalName == "Slug")?.Value ?? string.Empty,
-                        Content = meta?.Elements().FirstOrDefault(x => x.Name.LocalName == "Content")?.Value ?? string.Empty,
-                        Summary = meta?.Elements().FirstOrDefault(x => x.Name.LocalName == "Summary")?.Value ?? string.Empty,
+                        Id = id,
+                        Title = title,
+                        Slug = slug,
+                        Content = GetVal("Content", "content"),
+                        Summary = GetVal("Summary", "summary"),
                         Metadata = new ArticleMetadata
                         {
-                            Summary = meta?.Elements().FirstOrDefault(x => x.Name.LocalName == "Summary")?.Value ?? string.Empty,
-                            Content = meta?.Elements().FirstOrDefault(x => x.Name.LocalName == "Content")?.Value ?? string.Empty,
-                            Author = meta?.Elements().FirstOrDefault(x => x.Name.LocalName == "Author")?.Value ?? "Admin",
-                            Category = meta?.Elements().FirstOrDefault(x => x.Name.LocalName == "Category")?.Value ?? "Opće"
+                            Summary = GetVal("Summary", "summary"),
+                            Content = GetVal("Content", "content"),
+                            Author = GetVal("Author", "author", "creator"),
+                            Category = GetVal("Category", "category", "type")
                         }
                     });
+
+                    counter++;
                 }
 
                 DgSoapResults.ItemsSource = articles;
@@ -322,7 +372,6 @@ namespace Interop.Client
             }
         }
 
-        // 8. gRPC DHMZ Vremenska prognoza
         private async void BtnGrpc_Click(object sender, RoutedEventArgs e)
         {
             try

@@ -28,17 +28,20 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
-                        <Button Content="Učitaj s Cosmic API" Click="BtnGetCosmic_Click" Padding="10,5" Margin="0,0,10,0"/>
-                        <Button Content="Učitaj iz Baze" Click="BtnGetDb_Click" Padding="10,5"/>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                        <Label Content="Izvor podataka:" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <RadioButton x:Name="RbDatabase" Content="Baza Podataka (SQL)" IsChecked="True" GroupName="SourceGroup" Margin="10,0,10,0" VerticalAlignment="Center" Checked="Source_Checked"/>
+                        <RadioButton x:Name="RbCosmic" Content="Cosmic CMS" GroupName="SourceGroup" VerticalAlignment="Center" Checked="Source_Checked"/>
+                        <Button x:Name="BtnRefresh" Content="Osvježi Podatke" Margin="20,0,0,0" Padding="10,2" Click="BtnRefresh_Click"/>
                     </StackPanel>
 
-                    <DataGrid x:Name="DgArticles" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid x:Name="DgArticles" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DgMainArticles_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="120"/>
-                            <DataGridTextColumn Header="Naslov" Binding="{Binding Title}" Width="*"/>
+                            <DataGridTextColumn Header="Naslov" Binding="{Binding Title}" Width="180"/>
                             <DataGridTextColumn Header="Slug" Binding="{Binding Slug}" Width="150"/>
-                            <DataGridTextColumn Header="Sažetak / Sadržaj" Binding="{Binding Summary}" Width="2*"/>
+                            <DataGridTextColumn Header="Sadržaj / Sažetak" Binding="{Binding Content}" Width="*"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

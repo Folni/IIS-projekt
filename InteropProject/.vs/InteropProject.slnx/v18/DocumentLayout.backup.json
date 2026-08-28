@@ -3,36 +3,8 @@
   "WorkspaceRootPath": "D:\\Dev\\IIS-projekt\\InteropProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E1FB768-49D8-4B43-1D90-D50514C6AC14}|Interop.Client\\Interop.Client.csproj|d:\\dev\\iis-projekt\\interopproject\\interop.client\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{7E1FB768-49D8-4B43-1D90-D50514C6AC14}|Interop.Client\\Interop.Client.csproj|solutionrelative:interop.client\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E1FB768-49D8-4B43-1D90-D50514C6AC14}|Interop.Client\\Interop.Client.csproj|d:\\dev\\iis-projekt\\interopproject\\interop.client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7E1FB768-49D8-4B43-1D90-D50514C6AC14}|Interop.Client\\Interop.Client.csproj|solutionrelative:interop.client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F378502E-26AE-7001-52BB-9C53ADFD2C0F}|Interop.Common\\Interop.Common.csproj|d:\\dev\\iis-projekt\\interopproject\\interop.common\\articledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F378502E-26AE-7001-52BB-9C53ADFD2C0F}|Interop.Common\\Interop.Common.csproj|solutionrelative:interop.common\\articledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|d:\\dev\\iis-projekt\\interopproject\\interop.server\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|d:\\dev\\iis-projekt\\interopproject\\interop.server\\controllers\\customarticlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\controllers\\customarticlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|d:\\dev\\iis-projekt\\interopproject\\interop.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|d:\\dev\\iis-projekt\\interopproject\\interop.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|d:\\dev\\iis-projekt\\interopproject\\interop.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2A412B3D-270A-B8C6-EBC4-C0CA33212CD3}|Interop.Server\\Interop.Server.csproj|solutionrelative:interop.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,109 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ArticleDto.cs",
-              "DocumentMoniker": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Common\\ArticleDto.cs",
-              "RelativeDocumentMoniker": "Interop.Common\\ArticleDto.cs",
-              "ToolTip": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Common\\ArticleDto.cs",
-              "RelativeToolTip": "Interop.Common\\ArticleDto.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAkwD4AAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T12:35:18.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Client\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Interop.Client\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Client\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Interop.Client\\MainWindow.xaml.cs",
-              "ViewState": "AgIAADMBAAAAAAAAAAAkwFoBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T12:31:43.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Client\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Interop.Client\\MainWindow.xaml",
-              "ToolTip": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Client\\MainWindow.xaml",
-              "RelativeToolTip": "Interop.Client\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-08-25T12:31:32.475Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Interop.Server\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Interop.Server\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAYwFoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T12:26:48.122Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CustomArticlesController.cs",
-              "DocumentMoniker": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Controllers\\CustomArticlesController.cs",
-              "RelativeDocumentMoniker": "Interop.Server\\Controllers\\CustomArticlesController.cs",
-              "ToolTip": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Controllers\\CustomArticlesController.cs",
-              "RelativeToolTip": "Interop.Server\\Controllers\\CustomArticlesController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAAwFAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T12:27:24.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ArticlesController.cs",
-              "DocumentMoniker": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Controllers\\ArticlesController.cs",
-              "RelativeDocumentMoniker": "Interop.Server\\Controllers\\ArticlesController.cs",
-              "ToolTip": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Controllers\\ArticlesController.cs",
-              "RelativeToolTip": "Interop.Server\\Controllers\\ArticlesController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAYwFcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T12:27:15.595Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\appsettings.json",
-              "RelativeDocumentMoniker": "Interop.Server\\appsettings.json",
-              "ToolTip": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\appsettings.json",
-              "RelativeToolTip": "Interop.Server\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-08-25T10:54:35.18Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Program.cs",
               "RelativeDocumentMoniker": "Interop.Server\\Program.cs",
               "ToolTip": "D:\\Dev\\IIS-projekt\\InteropProject\\Interop.Server\\Program.cs",
               "RelativeToolTip": "Interop.Server\\Program.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAF0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T09:16:22.487Z"
+              "WhenOpened": "2026-08-24T09:16:22.487Z",
+              "EditorCaption": ""
             }
           ]
         }
